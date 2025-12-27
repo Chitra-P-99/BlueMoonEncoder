@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Moon Encoder</title>
+
+<!-- Web App Manifest & Icons -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-title" content="Blue Moon Encoder">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+
+    /* Bright moon + stars background */
+    background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+      url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    font-size: 18px;
+    opacity: 0.4;
+    animation: float 9s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(110vh); }
+    to   { transform: translateY(-10vh); }
+}
+
+/* Main card */
+.container {
+    width: 92%;
+    max-width: 400px;
+    background: rgba(10,15,30,0.9);
+    padding: 22px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.85);
+    z-index: 2;
+}
+
+h2 {
+    margin: 0;
+    color: #7fc8ff;
+}
+
+.subtitle {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 16px;
+}
+
+textarea {
+    width: 100%;
+    height: 90px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 14px;
+    border: none;
+    outline: none;
+    margin-bottom: 14px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 14px;
+    background: #5dade2;
+    color: white;
+    cursor: pointer;
+}
+
+button.clear {
+    background: #6c7a89;
+}
+
+.output {
+    margin-top: 14px;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+/* Romantic glowing tagline */
+.tagline {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: italic;
+    color: #bde9ff;
+    text-shadow:
+        0 0 6px #6ecfff,
+        0 0 12px #6ecfff,
+        0 0 18px rgba(110,207,255,0.8);
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%   { opacity: 0.7; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* Copy toast */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    background: #5dade2;
+    padding: 10px 22px;
+    border-radius: 25px;
+    display: none;
+    z-index: 3;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<script>
+for (let i = 0; i < 12; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💙";
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.animationDuration = (7 + Math.random() * 4) + "s";
+    document.body.appendChild(heart);
+}
+</script>
+
+<div class="container">
+    <h2>🌕 Blue Moon Encoder</h2>
+    <div class="subtitle">Bright moon • Silent stars • Secret words</div>
+
+    <textarea id="input" placeholder="Enter text or numbers"></textarea>
+
+    <div class="buttons">
+        <button onclick="encode()">Encode</button>
+        <button onclick="decode()">Decode</button>
+    </div>
+
+    <div class="buttons">
+        <button class="clear" onclick="clearAll()">Clear</button>
+        <button onclick="copyResult()">📋 Copy</button>
+    </div>
+
+    <div class="output" id="output">Result will appear here</div>
+
+    <!-- Romantic glowing tagline -->
+    <div class="tagline">Decode my heart, not my words 💙</div>
+</div>
+
+<div class="toast" id="toast">Copied 💙</div>
+
+<script>
+function encode() {
+    let result = [];
+    let text = input.value.toUpperCase();
+
+    for (let c of text) {
+        if (c >= 'A' && c <= 'Z') result.push(c.charCodeAt(0) - 64);
+        else if (c === ' ') result.push('/');
+    }
+    output.innerText = result.join('-');
+}
+
+function decode() {
+    let result = "";
+    let parts = input.value.split('-');
+    for (let p of parts) {
+        if (p === '/') result += " ";
+        else result += String.fromCharCode(Number(p) + 64);
+    }
+    output.innerText = result;
+}
+
+function clearAll() {
+    input.value = "";
+    output.innerText = "Result will appear here";
+}
+
+function copyResult() {
+    navigator.clipboard.writeText(output.innerText);
+    toast.style.display = "block";
+    setTimeout(() => toast.style.display = "none", 1500);
+}
+</script>
+
+</body>
+</html>
