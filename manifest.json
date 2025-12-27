@@ -1,11 +1,10 @@
 {
   "name": "Blue Moon Encoder",
-  "short_name": "MoonEncoder",
-  "description": "Encode and decode secret messages under the blue moon 💙",
-  "start_url": "blue-moon-encoder.html",
+  "short_name": "BlueMoon",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#0a0f1e",
-  "theme_color": "#5dade2",
+  "theme_color": "#0a0f1e",
   "icons": [
     {
       "src": "icon-192.png",
