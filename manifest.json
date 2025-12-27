@@ -1,18 +1,19 @@
 {
   "name": "Blue Moon Encoder",
   "short_name": "BlueMoon",
-  "start_url": "./",
+  "start_url": "/BlueMoonEncoder/",
+  "scope": "/BlueMoonEncoder/",
   "display": "standalone",
   "background_color": "#0a0f1e",
   "theme_color": "#0a0f1e",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/BlueMoonEncoder/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "/BlueMoonEncoder/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
