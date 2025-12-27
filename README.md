@@ -1,83 +1,83 @@
 # BlueMoonEncoder
 Mobile-friendly web application designed to encode and decode secret messages
 
-🌕 BLUE MOON ENCODER
+🌕 BLUE MOON ENCODER – USER GUIDE
 
-Blue Moon Encoder is a mobile-friendly web application designed to encode and decode secret messages using a simple alphabet-to-number conversion scheme. The application features a romantic blue moon night theme and can be installed as a mobile app using GitHub Pages.
+Blue Moon Encoder is a simple and romantic web app that helps you encode and decode secret messages using an alphabet-to-number scheme.
 
 Tagline:
 Decode my heart, not my words 💙
 
 
-FEATURES
-• Encode text using A = 1, B = 2, …, Z = 26
-• Decode numeric messages back into text
-• Always-on dark mode with blue moon background
-• Floating heart animations
-• Copy result button
-• Clear button
-• Mobile-friendly design
-• Installable as a mobile app (PWA)
+HOW TO USE THE APP
+
+1. Open the Blue Moon Encoder app.
+2. You will see a single text box in the center of the screen.
+3. Type either:
+   • Normal text (letters), or
+   • Encoded numbers separated by hyphens.
 
 
-ENCODING SCHEME
-A = 1
-B = 2
-...
-Z = 26
+ENCODING A MESSAGE (TEXT → NUMBERS)
 
-Space is represented as: /
+1. Type your message using English letters (A–Z).
+   Example:
+   LOVE
+2. Press the “Encode” button.
+3. The result will appear below the buttons.
+
+Encoding Rules:
+• A = 1, B = 2, …, Z = 26
+• Spaces are shown as /
 
 Example:
 LOVE → 12-15-22-5
 HELLO WORLD → 8-5-12-12-15 / 23-15-18-12-4
 
 
-PROJECT STRUCTURE
-BlueMoonEncoder/
-├─ index.html
-├─ manifest.json
-├─ icon-192.png
-├─ icon-512.png
-└─ README.md
+DECODING A MESSAGE (NUMBERS → TEXT)
+
+1. Enter numbers separated by hyphens.
+2. Use / to represent spaces.
+3. Press the “Decode” button.
+4. The decoded text will appear below.
+
+Example:
+12-15-22-5 → LOVE
+8-5-12-12-15 / 23-15-18-12-4 → HELLO WORLD
 
 
-DEPLOYMENT USING GITHUB PAGES
-1. Create a GitHub repository named BlueMoonEncoder.
-2. Upload all project files to the repository root.
-3. Ensure the main file is named index.html.
-4. Go to Settings → Pages.
-5. Select Branch: main and Folder: root.
-6. Save and wait for deployment.
+COPYING THE RESULT
+
+1. After encoding or decoding, tap the “Copy” button.
+2. The result will be copied to your clipboard.
+3. You can paste it into messages, chats, or notes.
+
+
+CLEARING THE SCREEN
+
+• Press the “Clear” button to remove both input and result.
+
+
+TIPS FOR EASY USE
+
+• Use uppercase or lowercase letters – both work.
+• Always separate numbers using hyphens (-).
+• Use / to indicate a space between words.
+• Best used for secret messages, fun chats, or romantic notes 💙
+
+
+APP EXPERIENCE
+
+• Designed for mobile phones.
+• Always dark mode for night usage.
+• Floating hearts and moonlight theme for a romantic feel.
+• Works smoothly when added to the home screen.
+
+
+ENJOY THE MAGIC 🌙💙
+Let your words glow under the blue moon.
+
 
 App URL:
-https://github.com/Chitra-P-99/BlueMoonEncoder/tree/main
-
-
-INSTALL AS MOBILE APP
-
-Android (Chrome):
-• Open the app URL
-• Tap the three-dot menu
-• Select “Add to Home Screen”
-
-iOS (Safari):
-• Open the app URL
-• Tap Share
-• Select “Add to Home Screen”
-
-
-TECHNOLOGIES USED
-HTML5
-CSS3
-JavaScript
-Progressive Web App (PWA)
-GitHub Pages
-
-
-LICENSE
-This project is intended for educational and personal use.
-You are free to modify, enhance, and share it.
-
-
-💙 Made under the Blue Moon
+https://github.com/Chitra-P-99/BlueMoonEncoder
