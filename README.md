@@ -51,7 +51,7 @@ DEPLOYMENT USING GITHUB PAGES
 6. Save and wait for deployment.
 
 App URL:
-https://username.github.io/BlueMoonEncoder/
+https://github.com/Chitra-P-99/BlueMoonEncoder/tree/main
 
 
 INSTALL AS MOBILE APP
